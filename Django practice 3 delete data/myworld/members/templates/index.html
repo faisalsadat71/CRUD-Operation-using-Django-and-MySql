@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Reading from Database</h1>
+
+    <table border="1">
+
+        <tr>
+            <th>UserID</th>
+            <th>Username</th>
+            <th>Password</th>
+        </tr>
+
+        {% for i in myusers %}
+        <tr>
+            <td> {{i.id}} </td>
+            <td> {{i.username1}} </td>
+            <td> {{i.password1}} </td>
+            <td> <a href=" {% url 'delete' i.id %}" onclick=" return confirm('are you sure, you want to delete '+'{{i.username1}}'+' user?') " >Delete</a> </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    
+</body>
+</html>
